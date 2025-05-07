@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Project Management System</title>
+
+</head>
+<body>
+<div class="container">
+     <h1>Add Project</h1>
+     <!-- bcoz in controller we passing the object(new project()) directly thats why we give project here -->
+ <form action="" th:action="@{/saveProject}" th:object="${project}" method="post"> 
+    <table border="1">
+        <tr>
+           <td>Name:</td>
+           <td><input th:field="*{name}"/></td> 
+        </tr>
+        
+        <tr>
+          
+           <td align="center" colspan="2">
+               <input type="submit"/>
+               <a th:href="@{/getAllProjects}">Cancel</a>
+           </td> 
+        </tr>
+    </table>
+  </form>  
+  </div> 
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Project Management System</title>
+   <link rel="stylesheet" th:href="@{style.css}"></link>
+</head>
+<body>
+    <h1>Project Management System</h1>
+   <!--  @nbsp is giving for some space -->
+    <a href="addProject">Add Projects</a>&nbsp;&nbsp;&nbsp;
+     <a th:href="@{/home}">Home</a>
+   <table width="100%" border="1">
+    <tr th:each="project : ${projects}">
+        <td th:text="${project.id}"></td>
+        <td th:text="${project.name}"></td>
+        <td><a th:href="@{/editProject/{id}(id=${project.id})}">Edit Project</a></td>
+        <td><a th:href="@{/deleteProject/{id}(id=${project.id})}">Delete project</a></td>
+    </tr>
+</table>
+
+</body>
+</html>
